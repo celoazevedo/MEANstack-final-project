@@ -10,13 +10,14 @@ import { Router } from '@angular/router'
 })
 export class FavoriteComponent implements OnInit {
 
-  form = {
-
-
-  }
+  movieForm: any = {
+    movieId: null,
+    userId: null,
+    movieTitle: null,
+  };
+  
   movies: any = [];
 
-//sdf
   constructor(private _movieService: MovieService,
     public router: Router) { }
 
@@ -25,9 +26,10 @@ export class FavoriteComponent implements OnInit {
 
   onClick(){
     this._movieService.getFavoriteMovie().subscribe(results => {
-      for (let element of results["items"]){
-        this.movies.push(results)
-      }
+      // for (let element of results["movie"]){
+      //   this.movies.push(movie)
+      // }
+      console.log(results)
     })
   }
 

@@ -15,16 +15,16 @@ export class UserService {
   isLoggedIn: boolean = false;
   firstName: string = '';
 
-  constructor(private _http: HttpClient) { }
+  constructor(public _http: HttpClient) { }
 
 // getting the API's
 
   registerUser(form){
-    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, form);
+    return this._http.post(`${this.baseUrl}appUsers/`, form);
   }
 
   loginUser(userCredentials){
-    return this._http.post(`${this.baseUrl}${this.loginUrl}`, userCredentials);
+    return this._http.post(`${this.baseUrl}appUsers/login/`, userCredentials);
   }
 
 }
