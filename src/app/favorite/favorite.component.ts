@@ -11,12 +11,12 @@ import { Router } from '@angular/router'
 export class FavoriteComponent implements OnInit {
 
   form = {
-    
+
 
   }
   movies: any = [];
 
-
+//sdf
   constructor(private _movieService: MovieService,
     public router: Router) { }
 
