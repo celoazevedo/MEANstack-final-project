@@ -9,7 +9,7 @@ export class UserService {
   // url: string = "http://localhost:3000/api/appUsers/"
   baseUrl: string = "http://localhost:3000/api/"
 
-  appUserUrl: string = "appUsers/"
+  // appUserUrl: string = "appUsers/"
   loginUrl: string = "appUsers/login/"
 
   isLoggedIn: boolean = false;

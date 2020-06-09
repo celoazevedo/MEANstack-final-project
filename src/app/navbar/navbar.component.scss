@@ -1,0 +1,29 @@
+.nav {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font: white;
+    background-color:#4CAF50;
+    padding-top: 3px;
+    display:flex;
+    flex-flow:row nowrap;
+    list-style:none;
+    justify-content:space-between;
+    align-items: stretch;
+    border-bottom: solid  rgb(94, 86, 86);
+    text-decoration: none;
+    text-decoration-color: white;
+}
+.nav li {
+    text-decoration-color: white;
+    margin:0 auto;
+}
+
+.nav a {
+    color:rgb(94, 86, 86);
+
+}
+
+.nav a:hover {
+    color: white;
+
+}

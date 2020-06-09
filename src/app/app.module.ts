@@ -11,13 +11,15 @@ import { UserService } from './user.service';
 import { MovieService } from './movie.service';
 import { LoginComponent } from './login/login.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
