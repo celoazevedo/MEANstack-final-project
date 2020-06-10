@@ -24,13 +24,13 @@ export class FavoriteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(){
-    this._movieService.getFavoriteMovie().subscribe(results => {
-      // for (let element of results["movie"]){
-      //   this.movies.push(movie)
-      // }
-      console.log(results)
-    })
-  }
+  // onClick(){
+  //   this._movieService.getFavoriteMovie().subscribe(results => {
+  //     // for (let element of results["movie"]){
+  //     //   this.movies.push(movie)
+  //     // }
+  //     console.log(results)
+  //   })
+  // }
 
 }

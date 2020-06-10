@@ -22,10 +22,10 @@ export class LoginComponent implements OnInit {
 
   login(){
     this._userService.loginUser(this.form).subscribe( (res:any)=>{
-      console.log(res)
+      console.log("this is the id number " + res.id)
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
-      sessionStorage.setItem('loginResId', res.id);
+      sessionStorage.setItem('loginId', res.id);
       this._userService.firstName = res.firstName;
       this._userService.isLoggedIn = true;
       // this.goToDash();

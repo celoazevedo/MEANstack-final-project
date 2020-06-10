@@ -1,0 +1,39 @@
+
+    <div id='barWrapper' >
+        <div *ngFor="let genre of data">
+            <h4>
+                <a routerLink="/data/{{genre.name}}" title="{{genre.name}}">{{genre.name}}</a>
+            </h4> 
+        </div>
+    </div>     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+            <!-- <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path"> -->
+            <!-- <h4>
+                <a routerLink="/movie/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
+            </h4>    
+            <p><strong>Release Date: </strong>{{movie.release_date}}</p>
+            <p>
+                <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
+                <br>    
+                <small *ngIf="movie.vote_average">Average Rating:
+                    {{movie.vote_average}}
+                    <i></i>
+                    </small>
+            </p> 
+        </div>
+    </div>     -->
+       

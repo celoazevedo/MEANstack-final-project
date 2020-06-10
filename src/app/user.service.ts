@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http'
 export class UserService {
 
   // url: string = "http://localhost:3000/api/appUsers/"
+  // that is an observable that will retrieve data
   baseUrl: string = "http://localhost:3000/api/"
 
   // appUserUrl: string = "appUsers/"

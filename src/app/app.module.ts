@@ -12,6 +12,9 @@ import { MovieService } from './movie.service';
 import { LoginComponent } from './login/login.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     RegisterComponent,
     LoginComponent,
     FavoriteComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    SidebarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
