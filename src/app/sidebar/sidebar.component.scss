@@ -1,9 +1,31 @@
-#barWrapper{
-    margin: 0px;
-    border: solid black;
-    width: 20%;
+aside{
+    // border-right: solid #747474 2px;
+    background-color: #272727;
+    padding: 0px 0px, 0px, 5px;
+    padding-top: 18px;
+    margin: 10px;
+    width: 170px;
     flex-direction: column;
     display: flex;
-    justify-content: center;
-    align-content: center;
+}
+
+button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #747474; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    // background-color: ;
+
+}
+
+button:hover {
+    background-color: #272727;
+    color: #ffe400;
 }

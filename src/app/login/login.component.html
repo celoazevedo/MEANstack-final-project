@@ -1,4 +1,7 @@
-<p>login works!</p>
-<input type="text" name="email" placeholder="Email" [(ngModel)]="form.email" />
-<input type="password" name="password" placeholder="Password" [(ngModel)]="form.password" />
-<button type="submit" (click)="login()" class="btn btn-primary">Login</button>
+<div class = "container">
+    <label for="email"><b>Email</b></label>
+    <input type="text" name="email" placeholder="Email" [(ngModel)]="form.email" />
+    <label for="psw"><b>Password</b></label>
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="form.password" />
+    <button type="submit" (click)="login()" class="btn btn-primary">Login</button>
+</div>

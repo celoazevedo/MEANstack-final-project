@@ -1,29 +1,39 @@
 .nav {
+    height: 25px;
+    margin-bottom: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 900;
-    font: white;
-    background-color:#4CAF50;
-    padding-top: 3px;
+    font: #747474;
+    background-color: #ffe400;
+    padding-top: 10px;
     display:flex;
     flex-flow:row nowrap;
     list-style:none;
-    justify-content:space-between;
     align-items: stretch;
-    border-bottom: solid  rgb(94, 86, 86);
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: #747474
 }
 .nav li {
-    text-decoration-color: white;
+
+    text-decoration-color: #747474;
     margin:0 auto;
 }
 
 .nav a {
-    color:rgb(94, 86, 86);
+    color:#747474;
+    text-decoration: none;
 
 }
 
 .nav a:hover {
-    color: white;
+    color: #272727;
+
+}
+
+.item{
+    color:#747474;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font: #747474;
 
 }

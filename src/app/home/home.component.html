@@ -1,21 +1,18 @@
-
-
-    <div id = 'cardDisplay'>
-        <div id='cardWrapper' *ngFor="let movie of data">
-            <h4> {{ movie.title }} </h4>
+    <p id= 'genre'>{{ this._movieService.movieTitle }}</p>
+    <div id = 'cardsContainer'>
+        <div id='cardWrapper' *ngFor="let movie of this._movieService.data">
             <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
-            <!-- <h4>
-                <a routerLink="/movie/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
-            </h4>     -->
-            <p><strong>Release Date: </strong>{{movie.release_date}}</p>
-            <p>
-                <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
-                <br>    
-                <small *ngIf="movie.vote_average">Average Rating:
-                    {{movie.vote_average}}
-                    <i></i>
-                </small>
-            </p>
+            <div id='cardFooter'>
+                <h4> {{ movie.title }} </h4>    
+                <p>
+                    <strong>Release Date: </strong>{{movie.release_date}}
+                    <br>    
+                    <small *ngIf="movie.vote_average">Average Rating:
+                        {{movie.vote_average}}
+                    </small>
+                    <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
+                </p>
+            </div>
         </div>
     </div>
 

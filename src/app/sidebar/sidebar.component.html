@@ -1,39 +1,22 @@
+    <aside>
+        <button (click) ="getGenre(28, 'Action Movies')">Action</button>
+        <button (click) ="getGenre(12, 'Adventure Movies')">Adventure</button>
+        <button (click) ="getGenre(16, 'Animation Movies')">Animation</button>
+        <button (click) ="getGenre(35, 'Comedy Movies')">Comedy</button>
+        <button (click) ="getGenre(80, 'Crime Movies')">Crime</button>
+        <button (click) ="getGenre(99, 'Documentary Movies')">Documentary</button>
+        <button (click) ="getGenre(18, 'Drama Movies')">Drama</button>
+        <button (click) ="getGenre(10751, 'Family Movies')">Family</button>
+        <button (click) ="getGenre(14, 'Fantasy Movies')">Fantasy</button>
+        <button (click) ="getGenre(36, 'History Movies')">History</button>
+        <button (click) ="getGenre(27, 'Horror Movies')">Horror</button>
+        <button (click) ="getGenre(10402, 'Music Movies')">Music</button>
+        <button (click) ="getGenre(9648, 'Mystery Movies')">Mystery</button>
+        <button (click) ="getGenre(10749, 'Romance')">Romance</button>
+        <button (click) ="getGenre(878, 'Science Fiction Movies')">Science Fiction</button>
+        <button (click) ="getGenre(10770, 'TV Movies')">TV Movie</button>
+        <button (click) ="getGenre(53, 'Thriller Movies')">Thriller</button>
+        <button (click) ="getGenre(10752, 'War Movies')">War</button>
+        <button (click) ="getGenre(37, 'Western Movies')">Western</button>
+    </aside>
 
-    <div id='barWrapper' >
-        <div *ngFor="let genre of data">
-            <h4>
-                <a routerLink="/data/{{genre.name}}" title="{{genre.name}}">{{genre.name}}</a>
-            </h4> 
-        </div>
-    </div>     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-            <!-- <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path"> -->
-            <!-- <h4>
-                <a routerLink="/movie/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
-            </h4>    
-            <p><strong>Release Date: </strong>{{movie.release_date}}</p>
-            <p>
-                <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
-                <br>    
-                <small *ngIf="movie.vote_average">Average Rating:
-                    {{movie.vote_average}}
-                    <i></i>
-                    </small>
-            </p> 
-        </div>
-    </div>     -->
-       

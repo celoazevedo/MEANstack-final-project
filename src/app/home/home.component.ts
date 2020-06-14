@@ -11,18 +11,17 @@ export class HomeComponent implements OnInit {
 
   data: any = [];
 
-
-  constructor(private _movieService: MovieService,
+  constructor(public _movieService: MovieService,
     public router: Router) { }
 
     // ngOnInit(): void {
-
     // }
 
   ngOnInit() {
     this._movieService.getMovies().subscribe( (res: any) => {
-      this.data = res.results;
-      console.log(this.data);
+      this._movieService.data = res.results;
+      this._movieService.movieTitle = 'Popular Movies';
+      console.log(res.results);
         })
       }
     

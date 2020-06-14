@@ -10,6 +10,9 @@ export class MovieService {
   baseUrl: string = "https://api.themoviedb.org/3/"
   apiKey: string = "725a852ae3ce6bbac3d49e1e1b58773d"
 
+  data: any = [];
+  movieTitle: string;
+
   constructor(public _http: HttpClient) { }
 
   //popular
@@ -17,8 +20,8 @@ export class MovieService {
     return this._http.get(`${this.baseUrl}movie/popular?api_key=${this.apiKey}`)
   }
 
-  getGenre() {
-    return this._http.get(`${this.baseUrl}genre/movie/list?api_key=${this.apiKey}`)
+  getGenreMovies(genre) {
+    return this._http.get(`${this.baseUrl}discover/movie?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genre}`)
   }
 
   getUpcomingMovies() {
@@ -36,7 +39,5 @@ export class MovieService {
   getSearchMovies(searchInput) {
     return this._http.get(`https://api.themoviedb.org/3/search/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=${searchInput}&page=1&include_adult=false`)
   }
-
-//https://api.themoviedb.org/3/search/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=REPLACE&page=1&include_adult=false
 
 }
