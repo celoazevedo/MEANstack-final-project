@@ -2,5 +2,5 @@
 <div class = "container">
     <label for="search"><b>Search Movie:</b></label>    
     <input type="text" placeholder="Search" [(ngModel)]= "searchInput">
-    <button (click)="movieSearch()">Click</button>
+    <button routerLink="/home" (click)="movieSearch()">Click</button>
 </div>

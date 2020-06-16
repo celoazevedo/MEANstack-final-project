@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   searchInput: string;
-  data: any = [];
+  // data: any = [];
 
   constructor(public _movieService: MovieService,
     public router: Router) { }
@@ -21,9 +21,9 @@ export class SearchComponent implements OnInit {
 
   movieSearch() {
     this._movieService.getSearchMovies(this.searchInput).subscribe( (res: any) => {
-      this.data = res.results;
-      console.log(this.data);
+      this._movieService.data = res.results;
+      this._movieService.movieTitle = this.searchInput;
+      console.log(this._movieService.movieTitle, this._movieService.data);
 })
 }
-
 }

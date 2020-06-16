@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   };
 
   constructor(
-    private _userService: UserService, 
+    public _userService: UserService, 
     public router: Router) { }
 
   ngOnInit(): void {
@@ -25,21 +25,26 @@ export class RegisterComponent implements OnInit {
   }
 
   signUp(){
-    this._userService.registerUser(this.form).subscribe( (res: any)=> {
-      // console.log(res);
+    this._userService.registerUser(this.form)
+    .subscribe( (res: any)=> {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
+      sessionStorage.setItem('id', res.id);
+      sessionStorage.setItem('email', res.email);
+      if (res.token != null){
       this._userService.firstName = res.firstName;
       this._userService.isLoggedIn = true;
-      // this.goToDash();
+      alert('Registration Successful');
+      // console.log(res);
+      this.goHome();
+      } else { 
+        alert('Registration Error')
+      }
     }) 
   }
 
-  //need to create a home component
-  // goToDash(){
-  //   this.router.navigate(['/home']);
-  // }
-
-
+  goHome(){
+    this.router.navigate(['/home']);
+  }
 
 }

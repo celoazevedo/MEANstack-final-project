@@ -13,9 +13,10 @@ export class MovieService {
   data: any = [];
   movieTitle: string;
 
+  movieInput: boolean = false;
+
   constructor(public _http: HttpClient) { }
 
-  //popular
   getMovies() {
     return this._http.get(`${this.baseUrl}movie/popular?api_key=${this.apiKey}`)
   }
@@ -32,9 +33,9 @@ export class MovieService {
     return this._http.get(`${this.baseUrl}movie/latest?api_key=${this.apiKey}`)
   }
 
-  getFavoriteMovie () {
-    // return this._http.get(this.baseUrl + this.apiKey);
-  }
+  // addFavoriteMovie () {
+  //   return this._http.post(this.baseUrl + this.apiKey);
+  // }
 
   getSearchMovies(searchInput) {
     return this._http.get(`https://api.themoviedb.org/3/search/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=${searchInput}&page=1&include_adult=false`)

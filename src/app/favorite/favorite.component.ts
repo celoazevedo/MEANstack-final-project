@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Router } from '@angular/router'
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -18,19 +19,19 @@ export class FavoriteComponent implements OnInit {
   
   movies: any = [];
 
-  constructor(private _movieService: MovieService,
+  constructor(public _movieService: MovieService, public _userService: UserService,
     public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // onClick(){
-  //   this._movieService.getFavoriteMovie().subscribe(results => {
-  //     // for (let element of results["movie"]){
-  //     //   this.movies.push(movie)
-  //     // }
-  //     console.log(results)
+  // onClick(movieForm){
+  //   this._userService.addFavoriteMovie(movieForm).subscribe( (res: any) => {
+  //     console.log(res);
+  //     this._userService.movieForm = res;
   //   })
   // }
+
+
 
 }

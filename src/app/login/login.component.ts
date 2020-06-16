@@ -15,27 +15,40 @@ export class LoginComponent implements OnInit {
     password: null,
   };
 
-  constructor(private _userService: UserService, private router: Router) { }
+  userData: any = [];
+
+  constructor(public _userService: UserService, public router: Router) { }
 
   ngOnInit(): void {
   }
 
   login(){
-    this._userService.loginUser(this.form).subscribe( (res:any)=>{
-      console.log("this is the id number " + res.id)
+    this._userService.loginUser(this.form)
+    .subscribe( (res: any)=> {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
-      sessionStorage.setItem('loginId', res.id);
-      this._userService.firstName = res.firstName;
-      this._userService.isLoggedIn = true;
-      // this.goToDash();
+      sessionStorage.setItem('resId', res.id);
+      res.results = this.userData;
+      if (sessionStorage.token != null){ alert('Success!')
+      // this._userService.firstName = res.firstName;
+      // this._userService.isLoggedIn = true;
+      // res.results = this._userService.userData;
+      console.log(res.userId);
+      this.goHome();
+    }
+      // } else { 
+      //   alert ('Please Register') 
+      //   this.goRegister();
+      // }
     })
   }
 
-  //need to create a home component
-  // goToDash(){
-  //   this.router.navigate(['/home']);
-  // }
+  goHome(){
+    this.router.navigate(['/home']);
+  }
 
+  goRegister(){
+    this.router.navigate(['/register'])
+  }
 
 }

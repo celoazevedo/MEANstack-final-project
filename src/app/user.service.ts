@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,20 @@ export class UserService {
   loginUrl: string = "appUsers/login/"
 
   isLoggedIn: boolean = false;
+
+  userData: any = [];
   firstName: string = '';
+  userEmail: string ='';
+  userId = sessionStorage.getItem('userId');
+
+  movieForm: any = {
+    thirdPartyMovieId: null,
+    userId: null,
+    movieTitle: null,
+    posterPath: null,
+  };
 
   constructor(public _http: HttpClient) { }
-
-// getting the API's
 
   registerUser(form){
     return this._http.post(`${this.baseUrl}appUsers/`, form);
@@ -26,6 +35,14 @@ export class UserService {
 
   loginUser(userCredentials){
     return this._http.post(`${this.baseUrl}appUsers/login/`, userCredentials);
+  }
+
+  addFavoriteMovie (movieForm) {
+    return this._http.post(`${this.baseUrl}appUsers/${this.userId}/favorites/`, movieForm, {headers: this.createHeader()});
+  }
+
+  createHeader() {
+    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));
   }
 
 }
