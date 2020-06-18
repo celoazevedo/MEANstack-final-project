@@ -3,7 +3,7 @@
         <div id='cardWrapper' *ngFor="let movie of this._movieService.data">
             <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
             <div id='cardFooter'>
-                <h4> {{ movie.title }} </h4>    
+                <h4> {{ movie.title | slice:0:25 }} {{ movie.title.length > 25 ? '...' : ''}} </h4>    
                 <p>
                     <strong>Release Date: </strong>{{movie.release_date}}
                     <br>    
@@ -11,7 +11,7 @@
                         {{movie.vote_average}}
                     </small>
                     <!-- <a routerLink="/movie/{{movie.id}}">View details &raquo;</a> -->
-                    <button (click) = "onClick(movie)" class = "favoriteButton"> Fav </button>
+                    <button (click) = "onClick(movie)" id = "favoriteButton"><span> Favorite </span></button>
                 </p>
             </div>
         </div>

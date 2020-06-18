@@ -14,19 +14,20 @@ export class SidebarComponent {
 
   constructor(public _movieService: MovieService,
     public router: Router) { }
-
-  // ngOnInit(): void {
-  //       this._movieService.getMovies().subscribe( (res: any) => {
-  //     this.movies = res.results;
-  //     console.log(this.movies);
-  //   })
-  // }
+    
 
   getGenre (genreId, movieTitle) {
-    this._movieService.getGenreMovies(genreId).subscribe( (res: any) => {
+    this._movieService.getGenreMovies(genreId)
+    .subscribe( (res: any) => {
       this._movieService.data = res.results;
       this._movieService.movieTitle = movieTitle;
       console.log(genreId, movieTitle, this._movieService.data);
+      this.goHome();
         })
-      }
-    }
+      } 
+
+  goHome(){
+        this.router.navigate(['/home']);
+  }
+
+}

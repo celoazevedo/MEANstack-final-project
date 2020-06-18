@@ -6,22 +6,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 })
 export class UserService {
 
-  // url: string = "http://localhost:3000/api/appUsers/"
-  // that is an observable that will retrieve data
   baseUrl: string = "http://localhost:3000/api/"
-
-  // appUserUrl: string = "appUsers/"
   loginUrl: string = "appUsers/login/"
 
   isLoggedIn: boolean = false;
 
-  userData: any = [];
   firstName: string = '';
   userEmail: string ='';
   userId = sessionStorage.getItem('userId');
 
   movieForm: any = {
-    thirdPartyMovieId: null,
+    movieId: null,
     userId: null,
     movieTitle: null,
     posterPath: null,

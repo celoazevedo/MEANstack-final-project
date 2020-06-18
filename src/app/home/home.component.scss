@@ -29,6 +29,7 @@ img {
     padding-top: 4px;
     padding-bottom: 0px;
     max-width: 95%;
+    min-height: 80%;
     align-self: center;
 }
 
@@ -64,6 +65,42 @@ h4{
     padding-top: 8px;
 }
 
-#favorite{
-    size: 2px;
-}
+#favoriteButton{
+    // display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 9px;
+    padding: 5px;
+    width: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #favoriteButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #favoriteButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #favoriteButton:hover span {
+    padding-right: 25px;
+  }
+  
+  #favoriteButton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

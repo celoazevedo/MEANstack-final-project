@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   // data: any = [];
   movieForm: any = {
-    thirdPartyMovieId: null,
+    movieId: null,
     userId: null,
     movieTitle: null,
     posterPath: null,
@@ -20,9 +20,6 @@ export class HomeComponent implements OnInit {
 
   constructor(public _movieService: MovieService, public _userService: UserService,
     public router: Router) { }
-
-    // ngOnInit(): void {
-    // }
 
   ngOnInit() {
     this._movieService.getMovies()
@@ -34,18 +31,16 @@ export class HomeComponent implements OnInit {
       }
 
   onClick(movie){
-    console.log(movie)
-    this.movieForm.thirdPartyMovieId = movie.id;
+    this.movieForm.movieId = movie.id;
     this.movieForm.movieTitle = movie.title;
     this.movieForm.userId = sessionStorage.getItem("userId");
     this.movieForm.posterPath = movie.poster_path;
     console.log(this.movieForm, 'movie');
     this._userService.addFavoriteMovie(this.movieForm)
     .subscribe( (res: any) => {
-      this._userService.movieForm = res.results;
-      console.log(this._userService.movieForm);
+      // this._userService.movieForm = this.movieForm;
+      // console.log(this._userService.movieForm);
         })
       }
-
     
 }

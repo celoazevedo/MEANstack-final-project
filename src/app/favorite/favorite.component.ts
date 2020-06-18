@@ -11,27 +11,10 @@ import { UserService } from '../user.service';
 })
 export class FavoriteComponent implements OnInit {
 
-  movieForm: any = {
-    movieId: null,
-    userId: null,
-    movieTitle: null,
-  };
-  
-  movies: any = [];
-
   constructor(public _movieService: MovieService, public _userService: UserService,
     public router: Router) { }
 
   ngOnInit(): void {
   }
-
-  // onClick(movieForm){
-  //   this._userService.addFavoriteMovie(movieForm).subscribe( (res: any) => {
-  //     console.log(res);
-  //     this._userService.movieForm = res;
-  //   })
-  // }
-
-
 
 }
