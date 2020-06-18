@@ -14,6 +14,9 @@ export class UserService {
   firstName: string = '';
   userEmail: string ='';
   userId = sessionStorage.getItem('userId');
+  token = sessionStorage.getItem('token');
+  
+  // movieTitle: string = '';
 
   movieForm: any = {
     movieId: null,
@@ -32,12 +35,16 @@ export class UserService {
     return this._http.post(`${this.baseUrl}appUsers/login/`, userCredentials);
   }
 
+  createHeader() {
+    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));
+  }
+  
   addFavoriteMovie (movieForm) {
     return this._http.post(`${this.baseUrl}appUsers/${this.userId}/favorites/`, movieForm, {headers: this.createHeader()});
   }
 
-  createHeader() {
-    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));
+  getFavorites(){
+    return this._http.get(`${this.baseUrl}appUsers/${this.userId}/favorites??access_token=${this.token}`);
   }
 
 }

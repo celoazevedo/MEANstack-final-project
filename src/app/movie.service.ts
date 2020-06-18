@@ -12,6 +12,7 @@ export class MovieService {
 
   data: any = [];
   movieTitle: string;
+  movieId: any;
 
   // movieInput: boolean = false;
 
