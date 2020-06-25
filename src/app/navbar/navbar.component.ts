@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,21 @@ import { Router } from '@angular/router'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  searchInput: string;
+
+  constructor(public _movieService: MovieService,
+    public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  movieSearch() {
+    this._movieService.getSearchMovies(this.searchInput)
+    .subscribe( (res: any) => {
+      this._movieService.data = res.results;
+      this._movieService.movieTitle = this.searchInput;
+      console.log(this._movieService.movieTitle, this._movieService.data);
+    })
   }
 
 }

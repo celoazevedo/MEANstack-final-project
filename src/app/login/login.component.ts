@@ -24,9 +24,10 @@ export class LoginComponent {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
       sessionStorage.setItem('resId', res.id);
-      if (sessionStorage.token != null){ alert('Success!')
-      this.goHome();
-    } else { 
+      if (sessionStorage.token != null){ 
+        alert('Success!')
+        this.goHome();
+      } else { 
         alert ('Please Register') 
         this.goRegister();
       }

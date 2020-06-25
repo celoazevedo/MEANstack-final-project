@@ -13,11 +13,14 @@ export class UserService {
 
   firstName: string = '';
   userEmail: string ='';
-  userId = sessionStorage.getItem('userId');
+  // userId = sessionStorage.getItem('userId');
+  // // token: string = '';
   token = sessionStorage.getItem('token');
   
   // movieTitle: string = '';
+  data: any = [];
 
+  // movieForm is updated with the onClick() function that invoques the addFavoriteMovie() from userService
   movieForm: any = {
     movieId: null,
     userId: null,
@@ -25,26 +28,34 @@ export class UserService {
     posterPath: null,
   };
 
+  movies: any = [];
+
   constructor(public _http: HttpClient) { }
 
-  registerUser(form){
-    return this._http.post(`${this.baseUrl}appUsers/`, form);
+  // the user credentials include the same info as in the form. 
+  // here we are just passing in a parameter so we can pass in 
+  // the form object when we invoque this function in the register Component.
+  registerUser(userCredentials){
+    return this._http.post(`${this.baseUrl}appUsers/`, userCredentials);
   }
 
   loginUser(userCredentials){
     return this._http.post(`${this.baseUrl}appUsers/login/`, userCredentials);
   }
 
+  getCredentials(){
+  }
+
   createHeader() {
     return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));
   }
   
-  addFavoriteMovie (movieForm) {
-    return this._http.post(`${this.baseUrl}appUsers/${this.userId}/favorites/`, movieForm, {headers: this.createHeader()});
+  addFavoriteMovie(movieForm) {
+    return this._http.post(`${this.baseUrl}appUsers/${sessionStorage.getItem('userId')}/favorites/`, movieForm, {headers: this.createHeader()});
   }
 
-  getFavorites(){
-    return this._http.get(`${this.baseUrl}appUsers/${this.userId}/favorites??access_token=${this.token}`);
+  getFavorites(movieForm){
+    return this._http.get(`${this.baseUrl}appUsers/${sessionStorage.getItem('userId')}/favorites??access_token=${this.token}`, movieForm);
   }
 
 }

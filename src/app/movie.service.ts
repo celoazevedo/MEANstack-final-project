@@ -30,9 +30,13 @@ export class MovieService {
     return this._http.get(`${this.baseUrl}movie/upcoming?api_key=${this.apiKey}`)
   }
 
-  getLatestMovies() {
-    return this._http.get(`${this.baseUrl}movie/latest?api_key=${this.apiKey}`)
+  getTopRatedMovies() {
+    return this._http.get(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}`)
   }
+
+  // getLatestMovies() {
+  //   return this._http.get(`${this.baseUrl}movie/latest?api_key=${this.apiKey}&language=en-US`)
+  // }
 
   getSearchMovies(searchInput) {
     return this._http.get(`https://api.themoviedb.org/3/search/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=${searchInput}&page=1&include_adult=false`)

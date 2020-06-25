@@ -10,7 +10,6 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
 
-  // data: any = [];
   movieForm: any = {
     movieId: null,
     userId: null,
@@ -30,6 +29,7 @@ export class HomeComponent implements OnInit {
         })
       }
 
+  // add favorite on click
   onClick(movie){
     this.movieForm.movieId = movie.id;
     this.movieForm.movieTitle = movie.title;
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     this._userService.addFavoriteMovie(this.movieForm)
     .subscribe( (res: any) => {
       // this._userService.movieForm = this.movieForm;
-      // console.log(this._userService.movieForm);
+      console.log(res);
         })
       }
     

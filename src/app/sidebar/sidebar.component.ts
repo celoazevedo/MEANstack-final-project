@@ -21,6 +21,8 @@ export class SidebarComponent {
     posterPath: null,
   };
 
+  data: any = [];
+
   constructor(public _movieService: MovieService, public _userService: UserService,
     public router: Router) { }
 
@@ -33,20 +35,41 @@ export class SidebarComponent {
       console.log(genreId, movieTitle, this._movieService.data);
       this.goHome();
         })
-      } 
+      }
+
+  getUpcoming (){
+    this._movieService.getUpcomingMovies()
+      .subscribe((res :any) => {
+        this._movieService.data = res.results;
+        this._movieService.movieTitle = "Upcoming Movies";
+        console.log(this._movieService.data);
+        this.goHome();
+      })
+  }
+
+  getTopRated (){
+    this._movieService.getTopRatedMovies()
+    .subscribe((res :any) => {
+      this._movieService.data = res.results;
+      this._movieService.movieTitle = "Top Rated Movies";
+      console.log(this._movieService.data);
+      this.goHome();
+    })
+  }
+
+  // getLatest(){
+  //   this._movieService.getLatestMovies()
+  //     .subscribe((res :any) => {
+  //       console.log(res);
+  //       this._movieService.data = res.results;
+  //       this._movieService.movieTitle = "Latest Movies";
+  //       console.log(this._movieService.data);
+  //       this.goHome();
+  //     })
+  // }
 
   goHome(){
     this.router.navigate(['/home']);
-  }
-
-  getFavoriteMovies(){
-    this._userService.getFavorites()
-    .subscribe( (res: any) => {
-      this._movieService.movieTitle = res.movieTitle;
-      
-      // // this._movieService.movieId = movieId;
-      console.log(this._movieService.data);
-    })
   }
 
 }

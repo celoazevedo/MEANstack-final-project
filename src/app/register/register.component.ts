@@ -33,8 +33,8 @@ export class RegisterComponent implements OnInit {
       sessionStorage.setItem('email', res.email);
       if (res.token != null){
       this._userService.firstName = res.firstName;
-      this._userService.isLoggedIn = true;
-      alert('Registration Successful');
+      // this._userService.isLoggedIn = true;
+      alert(`${this.form.firstName},Registration Successful`);
       // console.log(res);
       this.goHome();
       } else { 

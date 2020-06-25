@@ -9,21 +9,20 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  searchInput: string;
-  // data: any = [];
+  // searchInput: string;
 
   constructor(public _movieService: MovieService,
     public router: Router) { }
 
   ngOnInit(): void {
-
   }
 
-  movieSearch() {
-    this._movieService.getSearchMovies(this.searchInput).subscribe( (res: any) => {
-      this._movieService.data = res.results;
-      this._movieService.movieTitle = this.searchInput;
-      console.log(this._movieService.movieTitle, this._movieService.data);
-})
-}
+  // movieSearch() {
+  //   this._movieService.getSearchMovies(this.searchInput)
+  //   .subscribe( (res: any) => {
+  //     this._movieService.data = res.results;
+  //     this._movieService.movieTitle = this.searchInput;
+  //     console.log(this._movieService.movieTitle, this._movieService.data);
+  //   })
+  // }
 }
