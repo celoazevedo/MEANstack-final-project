@@ -26,13 +26,15 @@ export class LoginComponent {
       sessionStorage.setItem('resId', res.id);
       if (sessionStorage.token != null){ 
         alert('Success!')
+        this._userService.isLoggedIn = true;
         this.goHome();
-      } else { 
-        alert ('Please Register') 
-        this.goRegister();
+      // } else if (sessionStorage.resId != sessionStorage.userId){ 
+      //   alert ('Please Register') 
+      //   this.goRegister();
       }
     })
   }
+  
 
   goHome(){
     this.router.navigate(['/home']);

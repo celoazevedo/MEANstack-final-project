@@ -1,8 +1,9 @@
     <aside>
-        <button class="btn btn-primary btn-sm" (click) ="getTopRated()">Top Rated Movies</button>
-        <button class="btn btn-primary btn-sm" (click) ="getUpcoming()">Upcoming Movies</button>
+        <button *ngIf="this._userService.isLoggedIn" class="btn btn-primary btn-sm" (click) ="getFavoriteMovies()">Favorites</button>
+        <button class="btn btn-primary btn-sm" (click) ="getTopRated()">Top Rated</button>
+        <button class="btn btn-primary btn-sm" (click) ="getUpcoming()">Upcoming</button>
         <button class="btn btn-primary btn-sm" (click) ="getGenre(28, 'Action Movies')">Action</button>
-        <button class="btn btn-primary btn-sm" (click)  ="getGenre(12, 'Adventure Movies')">Adventure</button>
+        <button class="btn btn-primary btn-sm" (click) ="getGenre(12, 'Adventure Movies')">Adventure</button>
         <button class="btn btn-primary btn-sm" (click) ="getGenre(16, 'Animation Movies')">Animation</button>
         <button class="btn btn-primary btn-sm" (click) ="getGenre(35, 'Comedy Movies')">Comedy</button>
         <button class="btn btn-primary btn-sm" (click) ="getGenre(80, 'Crime Movies')">Crime</button>

@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <clr-input-container>
         <label>Email</label>
         <input clrInput type="text" [(ngModel)]="form.email" name="example" />
@@ -8,8 +8,39 @@
         <input clrInput type="text" [(ngModel)]="form.password" name="example" />
     </clr-input-container>
     <button type="submit" (click)="login()" class="btn btn-primary">Login</button>
-</div>
+</div> -->
 
+
+<div class="container">
+    <div class="login-wrapper">
+        <div class="login">
+            <section class="title">
+                <!-- <h3 class="welcome">Login</h3> -->
+                Login
+                <!-- <h5 class="hint">Use your User Name to sign in or create one now</h5> -->
+            </section>
+            <div class="login-group">
+                <clr-input-container>
+                    <label class="clr-sr-only">Email</label>
+                    <input clrInput type="text" clr placeholder="Email" [(ngModel)]="form.email"/>
+                </clr-input-container>
+                <clr-password-container>
+                    <label class="clr-sr-only">Password</label>
+                    <input type="password" clrPassword placeholder="Password" [(ngModel)]="form.password"/>
+                </clr-password-container>
+                <!-- <clr-checkbox-wrapper>
+                    <label class="clr-sr-only">Password</label>
+                    <input clrInput type="text" [(ngModel)]="form.password" name="example" />
+                </clr-checkbox-wrapper> -->
+                <!-- <div class="error active">
+                    Invalid user name or password
+                </div> -->
+                <button type="submit" (click)="login()"  class="btn btn-primary">Login</button>
+                <!-- <a href="..." routerLink = "/register" class="signup">Register</a> -->
+            </div>
+        </div>
+    </div>
+</div>
 <!-- 
 <div class = "container">
     <label for="email"><b>Email</b></label>

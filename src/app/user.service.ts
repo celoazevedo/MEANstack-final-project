@@ -43,6 +43,10 @@ export class UserService {
     return this._http.post(`${this.baseUrl}appUsers/login/`, userCredentials);
   }
 
+  logoutUser(){
+    return this._http.post(`${this.baseUrl}appUsers/logout/`, sessionStorage.getItem('token'), {headers: this.createHeader()});
+  }
+
   getCredentials(){
   }
 

@@ -1,5 +1,5 @@
-<p>favorite works!</p>
-<button (click) ="getFavoriteMovies()">Favorites</button>
+<!-- <p>favorite works!</p>
+<button (click) ="getFavoriteMovies()">Favorites</button> -->
 <div id = 'cardsContainer'>
     <div id='cardWrapper' *ngFor="let movie of this.data">
         <img src="https://image.tmdb.org/t/p/w300/{{movie.posterPath}}" *ngIf="movie.posterPath">

@@ -42,3 +42,27 @@
 // button:hover {
 //     opacity: 0.8;
 // }
+
+// .login{
+//     width: 100%;
+
+// }
+
+.container{
+    padding-top: 45px;
+    padding-bottom: 65px;
+    padding-left: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.login-wrapper{
+    width: 100%;
+    justify-self: center;
+}
+
+.login{
+    max-height: 400px;
+}
