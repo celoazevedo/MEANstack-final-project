@@ -16,6 +16,8 @@ export class FavoriteComponent implements OnInit {
     userId: null,
     movieTitle: null,
     posterPath: null,
+    voteAverage: null,
+    releaseDate: null,
   };
 
   

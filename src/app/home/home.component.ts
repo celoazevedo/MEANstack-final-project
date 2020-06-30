@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
     userId: null,
     movieTitle: null,
     posterPath: null,
+    voteAverage: null,
+    releaseDate: null,
   };
 
   constructor(public _movieService: MovieService, public _userService: UserService,
@@ -35,6 +37,8 @@ export class HomeComponent implements OnInit {
     this.movieForm.movieTitle = movie.title;
     this.movieForm.userId = sessionStorage.getItem("userId");
     this.movieForm.posterPath = movie.poster_path;
+    this.movieForm.voteAverage = movie.vote_average;
+    this.movieForm.releaseDate = movie.release_date;
     console.log(this.movieForm, 'movie');
     this._userService.addFavoriteMovie(this.movieForm)
     .subscribe( (res: any) => {

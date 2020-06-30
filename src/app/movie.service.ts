@@ -10,6 +10,8 @@ export class MovieService {
   baseUrl: string = "https://api.themoviedb.org/3/"
   apiKey: string = "725a852ae3ce6bbac3d49e1e1b58773d"
 
+  favMoviesData: any = [];
+
   data: any = [];
   movieTitle: string;
   movieId: any;

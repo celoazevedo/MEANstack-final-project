@@ -1,5 +1,5 @@
     <aside>
-        <button *ngIf="this._userService.isLoggedIn" class="btn btn-primary btn-sm" (click) ="getFavoriteMovies()">Favorites</button>
+        <button *ngIf="this._userService.isLoggedIn" routerLink ="/favorite" class="btn btn-primary btn-sm" (click) ="getFavoriteMovies()">Favorites</button>
         <button class="btn btn-primary btn-sm" (click) ="getTopRated()">Top Rated</button>
         <button class="btn btn-primary btn-sm" (click) ="getUpcoming()">Upcoming</button>
         <button class="btn btn-primary btn-sm" (click) ="getGenre(28, 'Action Movies')">Action</button>

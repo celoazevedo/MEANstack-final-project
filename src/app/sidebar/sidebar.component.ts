@@ -19,6 +19,8 @@ export class SidebarComponent {
     userId: null,
     movieTitle: null,
     posterPath: null,
+    voteAverage: null,
+    releaseDate: null,
   };
 
   data: any = [];
@@ -60,11 +62,11 @@ export class SidebarComponent {
   getFavoriteMovies(){
     this._userService.getFavorites(this.movieForm)
     .subscribe( (res: any) => {
-      this._movieService.data = res;
       this._movieService.movieTitle = "Favorite Movies"
-      // this.data = res;
-      console.log(this._movieService.data);
-      this.goHome();
+      // res.id = this.movieForm.movie
+      this._movieService.favMoviesData = res;
+      console.log(this._movieService.favMoviesData);
+      // this.goHome();
     })
   }
 
