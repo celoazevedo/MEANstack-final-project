@@ -47,8 +47,8 @@ export class UserService {
     return this._http.post(`${this.baseUrl}appUsers/logout/`, sessionStorage.getItem('token'), {headers: this.createHeader()});
   }
 
-  getCredentials(){
-  }
+  // getCredentials(){
+  // }
 
   createHeader() {
     return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));

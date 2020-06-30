@@ -7,13 +7,15 @@
     <li> <a routerLink="/register">Register</a> </li>
     <li> <a routerLink="/favorite">Favorite</a> </li>
 </ul>   -->
+<!-- href="#" this will go to the same page that we are in -->
+<!-- you can use the <img> tag to add an image. save the image to the folder and map it src="images/imagename.jpg" -->
 
 <header class="header-6">
     <div class="branding">
-        <a href="..." routerLink="/home" class="nav-link">
-            <clr-icon shape="vm-bug"></clr-icon>
-            <span class="title">     Home</span>
-        </a>
+        <p class="navTitle">
+            <clr-icon id="movieIcon" shape="film-strip"></clr-icon>
+            <span class="title" >     The Movie Finder</span>
+        </p>
     </div>
     <!-- <div *ngIf="this._userService.isLoggedIn" class="header-nav">
         <button (click) ="getFavoriteMovies()" class="btn">
@@ -23,7 +25,7 @@
         <!-- <a href="..." routerLink="/login" class="active nav-link"><span class="nav-text">Login</span></a> -->
         <!-- <a href="..." routerLink="/favorite" class="nav-link"><span class="nav-text" *ngIf="this._userService.isLoggedIn">Favorites</span></a> -->
     <!-- </div> -->
-    <div class="search">
+    <div class="search" *ngIf="this._userService.isLoggedIn">
         <!-- <label for="searchInput" (click)="movieSearch()"> -->
             <clr-icon id="search" size ="32" shape="search" (click)="movieSearch()"></clr-icon>
             <input id="searchInput" type="text" placeholder="   Search Movie" [(ngModel)]= "searchInput">
@@ -31,8 +33,8 @@
         <!-- </label> -->
     </div>
     <div class="header-actions">
-        <a href="..." class="nav-link" routerLink="/register"><span class="nav-text">Register</span></a>
-        <a href="..." class="nav-link" routerLink="/login"><span class="nav-text">Login</span></a>
+        <a *ngIf="!this._userService.isLoggedIn" class="nav-link" routerLink="/register"><span class="nav-text">Register</span></a>
+        <a *ngIf="!this._userService.isLoggedIn" class="nav-link" routerLink="/login"><span class="nav-text">Login</span></a>
         <clr-dropdown  *ngIf="this._userService.isLoggedIn">
             <button class="nav-icon" clrDropdownTrigger aria-label="toggle settings menu">
                 <clr-icon shape="cog"></clr-icon>
@@ -40,11 +42,12 @@
             </button>
 
             <!-- need to fix logout link/button -->
-            
+
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
                 <!-- <a href="..." routerLink="/register" clrDropdownItem>Register</a>
                 <a href="..." routerLink="/login" clrDropdownItem>Login</a> -->
-                <a href="..." (click)="this.logOut()" routerLink="..." clrDropdownItem>Log out</a>
+                <!-- <a href="..." (click)="this.logOut()" routerLink="..." clrDropdownItem>Log out</a> -->
+                <button (click)="this.logOut()">Logout</button>
             </clr-dropdown-menu>
         </clr-dropdown>
         <!-- <a href="..." class="nav-link nav-icon" aria-label="settings">
