@@ -1,6 +1,12 @@
 
 #mainView{
-    background-color: #272727;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
+    height: 100%;
+    
+}
+
+app-sidebar{
+    height: 100%;
 }

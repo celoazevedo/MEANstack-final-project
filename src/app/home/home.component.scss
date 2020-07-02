@@ -105,10 +105,20 @@
 //     right: 0;
 //   }
 
+#genre{
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #747474;
+    background-color: whitesmoke;
+    font-size: 18px;
+    // margin: 1px;
+    padding-left: 8px;
+}
+
 #cardsContainer {
-    background-color: #272727;
+    background-color: whitesmoke;
     padding: 0px 3px 3px 3px;
     max-width: 100%;
+    height: 100%;
     // border: solid black;
     display: flex;
     flex-direction: row;
@@ -152,17 +162,37 @@
     // display: inline-block;
     border-radius: 4px;
     // background-color: #f4511e;
-    background: none;
+    // background: none;
     border: none;
     color: #272727;
     text-align: center;
     font-size: 6px;
     // padding: 5px;
     // width: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 5px;
+    // transition: all 0.5s;
+    // cursor: pointer;
+    // margin-left: 5px;
+    // margin-bottom: 5px;
+    // padding-bottom: 4px;
   }
+
+  .thumbs-up{
+    padding-bottom: 5px;
+    
+  }
+
+  .card-text{
+    width: 100%;
+  }
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+  
   
   // #favoriteButton clr-icon {
   //   cursor: pointer;

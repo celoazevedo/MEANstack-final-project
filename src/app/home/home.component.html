@@ -30,7 +30,7 @@
                 <small *ngIf="movie.vote_average">Average Rating:
                     {{movie.vote_average}}
                 </small>
-                <button (click) = "onClick(movie)" id = "favoriteButton"><clr-icon shape="thumbs-up"></clr-icon></button>
+                <button (click) = "onClick(movie)" [ngClass]="{'green' : toggle, 'red': !toggle}" id = "favoriteButton"><clr-icon size="20" class="thumbs-up" shape="thumbs-up"></clr-icon>{{status}}</button>
             </p>
         </div>
             <!-- <ul class="list-group">

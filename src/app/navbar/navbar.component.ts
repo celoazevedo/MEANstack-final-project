@@ -41,6 +41,7 @@ export class NavbarComponent implements OnInit {
     .subscribe( (res: any) => {
       sessionStorage.clear();
       if(sessionStorage.getItem('token') === null){
+        this._userService.isLoggedIn = false;
         alert('Logout!');
         this.goHome();
       }

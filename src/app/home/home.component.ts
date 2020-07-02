@@ -10,6 +10,9 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
 
+  toggle = true;
+  status = 'Enable';
+
   movieForm: any = {
     movieId: null,
     userId: null,
@@ -40,6 +43,8 @@ export class HomeComponent implements OnInit {
     this.movieForm.voteAverage = movie.vote_average;
     this.movieForm.releaseDate = movie.release_date;
     console.log(this.movieForm, 'movie');
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'green' : 'red';
     this._userService.addFavoriteMovie(this.movieForm)
     .subscribe( (res: any) => {
       // this._userService.movieForm = this.movieForm;
