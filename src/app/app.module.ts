@@ -14,7 +14,6 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { SearchComponent } from './search/search.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,7 +26,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     HomeComponent,
     SidebarComponent,
-    SearchComponent
   ],
   imports: [
     BrowserModule,

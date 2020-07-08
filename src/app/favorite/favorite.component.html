@@ -1,29 +1,25 @@
-<!-- <p>favorite works!</p>
-<button (click) ="getFavoriteMovies()">Favorites</button> -->
-<!-- <div id = 'cardsContainer'>
-    <div id='cardWrapper' *ngFor="let movie of this.data">
-        <img src="https://image.tmdb.org/t/p/w300/{{movie.posterPath}}" *ngIf="movie.posterPath">
-        <div id='cardFooter'>
-            <h4> {{ movie.movieTitle | slice:0:25 }} {{ movie.movieTitle.length > 25 ? '...' : ''}} </h4>    
-        </div>
-    </div>
-</div> -->
-
 <p id= 'genre'>Favorite Movies</p>
 <div id = 'cardsContainer'>
-    <div class="card" *ngFor="let movie of this._movieService.favMoviesData">
+    <div 
+        class="card" 
+        *ngFor="let movie of this._movieService.favMoviesData">
         <div class="card-img">
-            <img src="https://image.tmdb.org/t/p/w300/{{movie.posterPath}}" *ngIf="movie.posterPath">
+            <img src="https://image.tmdb.org/t/p/w300/{{movie.posterPath}}" 
+            *ngIf="movie.posterPath">
         </div>
         <div class="card-block">
-            <h4 class="card-title">{{ movie.movieTitle | slice:0:25 }} {{ movie.movieTitle.length > 25 ? '...' : ''}}</h4>
+            <h4 class="card-title">
+                {{ movie.movieTitle | slice:0:25 }} 
+                {{ movie.movieTitle.length > 25 ? '...' : ''}}
+            </h4>
             <p class="card-text">
-                <small>Release Date: {{movie.releaseDate}} </small>
+                <small>
+                    Release Date: {{movie.releaseDate}} 
+                </small>
                 <br>    
                 <small *ngIf="movie.voteAverage">Average Rating:
                     {{movie.voteAverage}}
                 </small>
-                <!-- <button (click) = "onClick(movie)" id = "favoriteButton"><clr-icon shape="thumbs-up"></clr-icon></button> -->
             </p>
         </div>
             <!-- <ul class="list-group">

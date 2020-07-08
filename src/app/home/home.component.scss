@@ -1,5 +1,109 @@
 
-// #cardsContainer {
+#genre{
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #747474;
+    background-color: whitesmoke;
+    font-size: 18px;
+    // margin: 1px;
+    padding-left: 8px;
+}
+
+#cardsContainer {
+    background-color: whitesmoke;
+    padding: 0px 3px 3px 3px;
+    max-width: 100%;
+    height: 100%;
+    // border: solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+
+.card{
+    // padding: 3px 3px 3px 3px;
+    // max-width: 100%;
+    // background-color: #747474;
+    width: 220px;
+    margin: 3px;
+    padding: 2px;
+    height: 400px;
+    // border: solid black;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: baseline;
+}
+
+.card-block{
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-text{
+  // height: px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+
+}
+
+.card-title{
+  width: 100%;
+  font-size: 14px;
+  margin: 0px;
+  padding: 3px, 3px, 0px, 0px;
+  display:  flex;
+  flex-direction: row;
+}
+
+#favoriteButton{
+    // display: inline-block;
+    border-radius: 4px;
+    // background-color: #f4511e;
+    // background: none;
+    border: none;
+    // color: #272727;
+    text-align: center;
+    font-size: 6px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    // padding: 5px;
+    // width: 10px;
+    // transition: all 0.5s;
+    // cursor: pointer;
+    // margin-left: 5px;
+    // margin-bottom: 5px;
+    // padding-bottom: 4px;
+  }
+
+  // .thumbs-up{
+  //   padding-bottom: 5px;
+    
+  // }
+
+  .card-text{
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+  
+  
+  // #cardsContainer {
 //     background-color: #272727;
 //     padding: 0px 3px 3px 3px;
 //     max-width: 100%;
@@ -104,117 +208,3 @@
 //     opacity: 1;
 //     right: 0;
 //   }
-
-#genre{
-    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #747474;
-    background-color: whitesmoke;
-    font-size: 18px;
-    // margin: 1px;
-    padding-left: 8px;
-}
-
-#cardsContainer {
-    background-color: whitesmoke;
-    padding: 0px 3px 3px 3px;
-    max-width: 100%;
-    height: 100%;
-    // border: solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    
-}
-
-
-.card{
-    // padding: 3px 3px 3px 3px;
-    // max-width: 100%;
-    // background-color: #747474;
-    width: 220px;
-    margin: 3px;
-    padding: 2px;
-    height: 400px;
-    // border: solid black;
-    display: inline-flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: baseline;
-}
-
-.card-block{
-  padding: 0px;
-}
-
-.card-text{
-  padding: 0px;
-
-}
-
-.card-title{
-  font-size: 14px;
-  margin: 0px;
-  padding: 3px, 3px, 0px, 0px;
-}
-
-#favoriteButton{
-    // display: inline-block;
-    border-radius: 4px;
-    // background-color: #f4511e;
-    // background: none;
-    border: none;
-    color: #272727;
-    text-align: center;
-    font-size: 6px;
-    // padding: 5px;
-    // width: 10px;
-    // transition: all 0.5s;
-    // cursor: pointer;
-    // margin-left: 5px;
-    // margin-bottom: 5px;
-    // padding-bottom: 4px;
-  }
-
-  .thumbs-up{
-    padding-bottom: 5px;
-    
-  }
-
-  .card-text{
-    width: 100%;
-  }
-
-.green {
-    background-color: green;
-}
-
-.red {
-    background-color: red;
-}
-  
-  
-  // #favoriteButton clr-icon {
-  //   cursor: pointer;
-  //   display: inline-block;
-  //   position: relative;
-  //   transition: 0.5s;
-  // }
-  
-  // #favoriteButton clr-icon:after {
-  //   content: '\00bb';
-  //   position: absolute;
-  //   opacity: 0;
-  //   top: 0;
-  //   right: -20px;
-  //   transition: 0.5s;
-  // }
-  
-  // #favoriteButton:hover clr-icon {
-  //   padding-right: 25px;
-  // }
-  
-  // #favoriteButton:hover clr-icon:after {
-  //   opacity: 1;
-  //   right: 0;
-  // }

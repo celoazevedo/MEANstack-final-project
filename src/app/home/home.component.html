@@ -1,36 +1,34 @@
-    <!-- <p id= 'genre'>{{ this._movieService.movieTitle }}</p>
-    <div id = 'cardsContainer'>
-        <div id='cardWrapper' *ngFor="let movie of this._movieService.data">
-            <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
-            <div id='cardFooter'>
-                <h4> {{ movie.title | slice:0:25 }} {{ movie.title.length > 25 ? '...' : ''}} </h4>    
-                <p>
-                    <strong>Release Date: </strong>{{movie.release_date}}
-                    <br>    
-                    <small *ngIf="movie.vote_average">Average Rating:
-                        {{movie.vote_average}}
-                    </small>
-                    <button (click) = "onClick(movie)" id = "favoriteButton"><span> Favorite </span></button>
-                </p>
-            </div>
-        </div>
-    </div> -->
-
 <p id= 'genre'>{{ this._movieService.movieTitle }}</p>
 <div id = 'cardsContainer'>
-    <div class="card" *ngFor="let movie of this._movieService.data">
+    <div class="card" 
+        *ngFor="let movie of this._movieService.data; let i = index">
         <div class="card-img">
             <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
         </div>
         <div class="card-block">
-            <h4 class="card-title">{{ movie.title | slice:0:25 }} {{ movie.title.length > 25 ? '...' : ''}}</h4>
+            <h4 class="card-title">
+                {{ movie.title | slice:0:22 }} {{ movie.title.length > 22 ? '...' : ''}} 
+                <clr-icon 
+                    title="Add to Favorites" 
+                    size="20" 
+                    class="is-solid" 
+                    shape="heart" 
+                    (click) = "onClick(movie)" 
+                    *ngIf = "this._userService.isLoggedIn" 
+                    [ngClass]="{'black' : toggle, 'red': !toggle}" 
+                    id = "i">
+                </clr-icon>
+            </h4>
             <p class="card-text">
-                <small>Release Date: {{movie.release_date}} </small>
-                <br>    
-                <small *ngIf="movie.vote_average">Average Rating:
-                    {{movie.vote_average}}
+                <small>
+                    Release Date: {{movie.release_date}}
+                </small>  
+                <small 
+                    *ngIf="movie.vote_average">
+                    Average Rating:  {{movie.vote_average}}
                 </small>
-                <button (click) = "onClick(movie)" [ngClass]="{'green' : toggle, 'red': !toggle}" id = "favoriteButton"><clr-icon size="20" class="thumbs-up" shape="thumbs-up"></clr-icon>{{status}}</button>
+                <!-- <clr-icon title="Add to Favorites" size="20" class="is-solid" shape="heart" (click) = "onClick(movie)" *ngIf = "this._userService.isLoggedIn" [ngClass]="{'green' : toggle, 'red': !toggle}" id = "favoriteButton">{{status}}</clr-icon> -->
+                <!-- <button (click) = "onClick(movie)" *ngIf = "this._userService.isLoggedIn" [ngClass]="{'green' : toggle, 'red': !toggle}" id = "favoriteButton">{{status}}</button> -->
             </p>
         </div>
             <!-- <ul class="list-group">

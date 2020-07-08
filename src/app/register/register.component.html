@@ -1,64 +1,55 @@
-<!-- <div clrForm>
-    <clr-input-container>
-        <label>First Name</label>
-        <input clrInput type="text" [(ngModel)]="form.firstName"/>
-    </clr-input-container>
-    <clr-input-container>
-        <label>Last Name</label>
-        <input clrInput type="text" [(ngModel)]="form.email" name="example" />
-    </clr-input-container>
-    <clr-input-container>
-        <label>Password</label>
-        <input clrInput type="text" [(ngModel)]="form.password" name="example" />
-    </clr-input-container>
-    <button type="submit" (click)="signUp()" class="btn btn-primary">Sign Up</button>
-</div> -->
-
 <div class="container">
-<div class="login-wrapper">
-    <div class="login">
-        <section class="title">
-            <h3 class="welcome">Welcome to</h3>
-            The Movie Finder
-            <h5 class="hint">Please Register</h5>
-        </section>
-        <div class="login-group">
-            <clr-input-container>
-                <label class="clr-sr-only">First Name</label>
-                <input clrInput type="text" clr placeholder="First Name" [(ngModel)]="form.firstName"/>
-            </clr-input-container>
-            <clr-input-container>
-                <label class="clr-sr-only">Last Name</label>
-                <input clrInput type="text" clr placeholder="Last Name" [(ngModel)]="form.lastName"/>
-            </clr-input-container>
-            <clr-input-container>
-                <label class="clr-sr-only">Email</label>
-                <input clrInput type="text" clr placeholder="Email" [(ngModel)]="form.email"/>
-            </clr-input-container>
-            <clr-password-container>
-                <label class="clr-sr-only">Password</label>
-                <input type="password" clrPassword placeholder="Password" [(ngModel)]="form.password"/>
-            </clr-password-container>
-            <!-- <clr-checkbox-wrapper>
-                <label class="clr-sr-only">Password</label>
-                <input clrInput type="text" [(ngModel)]="form.password" name="example" />
-            </clr-checkbox-wrapper> -->
-            <!-- <div class="error active">
-                Invalid user name or password
-            </div> -->
-            <button type="submit" (click)="signUp()" class="btn btn-primary">Sign Up</button>
-            <!-- <a href="..." routerLink = "/register" class="signup">Register</a> -->
+    <div class="login-wrapper">
+        <div class="login">
+            <section class="title">
+                <h3 class="welcome">Welcome to</h3>
+                The Movie Finder
+                <h5 class="hint">Please Register</h5>
+            </section>
+            <div class="login-group">
+                <clr-input-container>
+                    <label class="clr-sr-only">First Name</label>
+                    <input 
+                        clrInput type="text" 
+                        clr placeholder="First Name" 
+                        [(ngModel)]="form.firstName"/>
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only">Last Name</label>
+                    <input 
+                        clrInput type="text" 
+                        clr placeholder="Last Name" 
+                        [(ngModel)]="form.lastName"/>
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only">Email</label>
+                    <input 
+                        clrInput type="text" 
+                        clr placeholder="Email" 
+                        [(ngModel)]="form.email"/>
+                </clr-input-container>
+                <clr-password-container>
+                    <label class="clr-sr-only">Password</label>
+                    <input 
+                        type="password" 
+                        clrPassword placeholder="Password" 
+                        [(ngModel)]="form.password"/>
+                </clr-password-container>
+                <!-- <clr-checkbox-wrapper>
+                    <label class="clr-sr-only">Password</label>
+                    <input clrInput type="text" [(ngModel)]="form.password" name="example" />
+                </clr-checkbox-wrapper> -->
+                <!-- <div class="error active">
+                    Invalid user name or password
+                </div> -->
+                <button 
+                    type="submit" 
+                    (click)="signUp()" 
+                    class="btn btn-primary">
+                    Sign Up
+                </button>
+                <!-- <a href="..." routerLink = "/register" class="signup">Register</a> -->
+            </div>
         </div>
     </div>
 </div>
-</div>
-    <!-- <label for="firstName"><b>First Name</b></label>
-    <input type="text" name="firstName" placeholder="First Name" [(ngModel)]="form.firstName"/> -->
-    <!-- <label for="lastName"><b>Last Name</b></label>
-    <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="form.lastName"/>
-    <label for="email"><b>Email</b></label>
-    <input type="text" name="email" clrInput placeholder="Email" [(ngModel)]="form.email"/>
-    <label for="password"><b>Password</b></label>
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="form.password"/>
-    <button type="submit" (click)="signUp()" class="btn btn-primary">Sign Up</button>
-</div>-->

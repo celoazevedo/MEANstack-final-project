@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   toggle = true;
   status = 'Enable';
-
+  
   movieForm: any = {
     movieId: null,
     userId: null,
@@ -43,11 +43,12 @@ export class HomeComponent implements OnInit {
     this.movieForm.voteAverage = movie.vote_average;
     this.movieForm.releaseDate = movie.release_date;
     console.log(this.movieForm, 'movie');
+    // need to fix this. All of the icons are changing colors. 
+    // Instead of just the icon that is pressed.
     this.toggle = !this.toggle;
-    this.status = this.toggle ? 'green' : 'red';
+    this.status = this.toggle ? 'black' : 'red';
     this._userService.addFavoriteMovie(this.movieForm)
     .subscribe( (res: any) => {
-      // this._userService.movieForm = this.movieForm;
       console.log(res);
         })
       }

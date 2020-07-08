@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Router } from '@angular/router'
 import { UserService } from '../user.service';
@@ -9,7 +9,6 @@ import { UserService } from '../user.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  //removed---//implements OnInit 
 
   genreId;
   movieTitle;
@@ -63,14 +62,36 @@ export class SidebarComponent {
     this._userService.getFavorites(this.movieForm)
     .subscribe( (res: any) => {
       this._movieService.movieTitle = "Favorite Movies"
-      // res.id = this.movieForm.movie
       this._movieService.favMoviesData = res;
       console.log(this._movieService.favMoviesData);
-      // this.goHome();
     })
   }
 
-  // getLatest(){
+  goHome(){
+    this.router.navigate(['/home']);
+  }
+
+}
+
+
+  // getFavoriteMovies(){
+  //   this._userService.getFavorites(this.movieForm)
+  //   .subscribe( (res: any) => {
+  //     this._movieService.movieTitle = "Favorite Movies"
+  //     // res.id = this.movieForm.movie
+  //     this.data = res;
+  //     this.data.filter((movieId, index) => {
+  //       console.log(movieId, index, this.data.indexOf(movieId), this.data.indexOf(movieId) === index)
+  //       return this.data.indexOf(movieId) === index;
+  //     })
+  //     this._movieService.favMoviesData = this.data;
+  //     // this._movieService.favMoviesData = res;
+  //     console.log(this._movieService.favMoviesData);
+  //     // this.goHome();
+  //   })
+  // }
+
+    // getLatest(){
   //   this._movieService.getLatestMovies()
   //     .subscribe((res :any) => {
   //       console.log(res);
@@ -80,9 +101,3 @@ export class SidebarComponent {
   //       this.goHome();
   //     })
   // }
-
-  goHome(){
-    this.router.navigate(['/home']);
-  }
-
-}

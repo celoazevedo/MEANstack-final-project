@@ -12,16 +12,8 @@ export class NavbarComponent implements OnInit {
 
   searchInput: string;
 
-  movieForm: any = {
-    movieId: null,
-    userId: null,
-    movieTitle: null,
-    posterPath: null,
-  };
-
-  data: any = [];
-
-  constructor(public _movieService: MovieService, public _userService: UserService,
+  constructor(public _movieService: MovieService, 
+    public _userService: UserService,
     public router: Router) { }
 
   ngOnInit(): void {
@@ -51,17 +43,5 @@ export class NavbarComponent implements OnInit {
   goHome(){
     this.router.navigate(['/home']);
   }
-
-  // getFavoriteMovies(){
-  //   this._userService.getFavorites(this.movieForm)
-  //   .subscribe( (res: any) => {
-  //     // sessionStorage.setItem('token', res.token);
-  //     // sessionStorage.setItem('userId', res.userId);
-  //     // sessionStorage.setItem('id', res.id);
-  //     this._movieService.data = res;
-  //     this._movieService.movieTitle = "Favorites"
-  //     console.log(this._movieService.data);
-  //   })
-  // }
 
 }
