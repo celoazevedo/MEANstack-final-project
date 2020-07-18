@@ -24,10 +24,10 @@ export class MovieService {
     return this._http.get(`${this.baseUrl}movie/popular?api_key=${this.apiKey}`)
   }
 
+  //https://api.themoviedb.org/3/discover/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28
+
   getGenreMovies(genre) {
-    return this._http.get(`${this.baseUrl}discover/movie?api_key=${this.apiKey}
-      &language=en-US&sort_by=popularity.
-      desc&include_adult=false&include_video=false&page=1&with_genres=${genre}`)
+    return this._http.get(`${this.baseUrl}discover/movie?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genre}`)
   }
 
   getUpcomingMovies() {
@@ -43,9 +43,7 @@ export class MovieService {
   // }
 
   getSearchMovies(searchInput) {
-    return this._http.get(`https://api.themoviedb.org/3/search/movie?
-      api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=
-      ${searchInput}&page=1&include_adult=false`)
+    return this._http.get(`https://api.themoviedb.org/3/search/movie?api_key=725a852ae3ce6bbac3d49e1e1b58773d&language=en-US&query=${searchInput}&page=1&include_adult=false`)
   }
 
 }
