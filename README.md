@@ -1,5 +1,7 @@
 # FinalProjectFront
 
+Front End of the movie finder web app. Using The Movie Database APIs.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Development server
