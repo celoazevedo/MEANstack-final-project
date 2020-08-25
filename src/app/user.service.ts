@@ -65,4 +65,16 @@ export class UserService {
     return this._http.get(`${this.baseUrl}appUsers/${sessionStorage.getItem('userId')}/favorites??access_token=${this.token}`, movieForm);
   }
 
+//checking if the object in the movies array is already in the favorites
+
+//   checkFavorited(){
+//     for (let i=0; i< this.movies.length; i++){
+//       for (let j=0 ; j< this.movies.length; j++){
+//         if (this.movies[i].id == this.favorites[j].movieID){
+//           this.movies[i].favorited = true;
+//           console.log("works!")
+//         }
+//       }
+//     }
+//   }
 }

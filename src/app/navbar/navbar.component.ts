@@ -10,9 +10,9 @@ import { UserService } from '../user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  searchInput: string;
+  searchInput: string = null;
 
-  constructor(public _movieService: MovieService, 
+  constructor(public _movieService: MovieService,
     public _userService: UserService,
     public router: Router) { }
 
@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
       this._movieService.data = res.results;
       this._movieService.movieTitle = this.searchInput;
       console.log(this._movieService.movieTitle, this._movieService.data);
+      this.clearSearchInput();
     })
   }
 
@@ -38,6 +39,10 @@ export class NavbarComponent implements OnInit {
         this.goHome();
       }
     })
+  }
+
+  clearSearchInput() {
+    this.searchInput = " ";
   }
 
   goHome(){

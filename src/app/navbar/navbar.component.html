@@ -7,41 +7,44 @@
     </div>
     <div class="search" *ngIf="this._userService.isLoggedIn">
         <!-- <label for="searchInput" (click)="movieSearch()"> -->
-            <clr-icon 
-                id="search" 
-                size ="32" 
-                shape="search" 
+            <clr-icon
+                id="search"
+                size ="32"
+                shape="search"
                 (click)="movieSearch()">
             </clr-icon>
-            <input 
-                id="searchInput" 
-                type="text" 
-                placeholder="   Search Movie" 
+            <input
+                id="searchInput"
+                name="searchMovie"
+                type="text"
+                placeholder="   Search Movie"
+                required
+                minlength="1"
                 [(ngModel)]= "searchInput">
             <!-- <button routerLink="/home" (click)="movieSearch()">Search</button> -->
         <!-- </label> -->
     </div>
     <div class="header-actions">
-        <a *ngIf="!this._userService.isLoggedIn" 
-            class="nav-link" 
+        <a *ngIf="!this._userService.isLoggedIn"
+            class="nav-link"
             routerLink="/register">
-            <span 
+            <span
                 class="nav-text">
                 Register
             </span>
         </a>
-        <a *ngIf="!this._userService.isLoggedIn" 
-            class="nav-link" 
+        <a *ngIf="!this._userService.isLoggedIn"
+            class="nav-link"
             routerLink="/login">
-            <span 
+            <span
                 class="nav-text">
                 Login
             </span>
         </a>
-        <clr-dropdown  
-            *ngIf="this._userService.isLoggedIn">           
-            <button 
-                class="nav-icon" 
+        <clr-dropdown
+            *ngIf="this._userService.isLoggedIn">
+            <button
+                class="nav-icon"
                 clrDropdownTrigger aria-label="toggle settings menu">
                 <clr-icon shape="cog"></clr-icon>
                 <clr-icon shape="caret down"></clr-icon>
